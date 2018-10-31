@@ -1,5 +1,5 @@
 //
-//  Panagram.swift.swift
+//  PatchStrings.swift
 //  makeLocalizedStringSwift
 //
 //  Created by Katsuhiko Terada on 2018/07/09.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Panagram
+class PatchStrings
 {
     let consoleIO = ConsoleIO()
     var input1: String?
@@ -17,17 +17,25 @@ class Panagram
     func staticMode()
     {
         let argc = Int(CommandLine.argc)
-        if argc > 1
+        
+        guard argc > 2 else
         {
-            input1 = CommandLine.arguments[1]
+            usage()
+            return
         }
-        if argc > 2
-        {
-            input2 = CommandLine.arguments[2]
-        }
+        input1 = CommandLine.arguments[1]
+        input2 = CommandLine.arguments[2]
     }
     
-    func read()
+    
+    func usage() {
+        
+        let executableName = (CommandLine.arguments[0] as NSString).lastPathComponent
+        print("usage:")
+        print("\(executableName) patchfile Localizable.strings > Localizable.strings.new")
+    }
+    
+    func patch()
     {
         if let _input1 = input1, let _input2 = input2
         {
@@ -78,27 +86,6 @@ class Panagram
                     print(line1)
                 }
             }
-//
-//            print(lines1)
-//            print(lines2)
-        }
-    }
-    
-    func interactiveMode() {
-
-        var shouldQuit = false
-        while !shouldQuit {
-            let line = consoleIO.getInput()
-            if line.isEmpty
-            {
-                shouldQuit = true
-                continue
-            }
-            else
-            {
-                
-            }
-            print(line)
         }
     }
 }

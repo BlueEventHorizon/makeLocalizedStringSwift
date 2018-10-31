@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		767872A320F36DD700713B83 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767872A220F36DD700713B83 /* main.swift */; };
 		767872AA20F3713A00713B83 /* ConsoleIO.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767872A920F3713A00713B83 /* ConsoleIO.swift.swift */; };
-		767872AC20F372A600713B83 /* Panagram.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767872AB20F372A600713B83 /* Panagram.swift.swift */; };
+		767872AC20F372A600713B83 /* PatchStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767872AB20F372A600713B83 /* PatchStrings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,7 +28,7 @@
 		7678729F20F36DD700713B83 /* makeLocalizedStringSwift */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = makeLocalizedStringSwift; sourceTree = BUILT_PRODUCTS_DIR; };
 		767872A220F36DD700713B83 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		767872A920F3713A00713B83 /* ConsoleIO.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleIO.swift.swift; sourceTree = "<group>"; };
-		767872AB20F372A600713B83 /* Panagram.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Panagram.swift.swift; sourceTree = "<group>"; };
+		767872AB20F372A600713B83 /* PatchStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchStrings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +63,7 @@
 			children = (
 				767872A220F36DD700713B83 /* main.swift */,
 				767872A920F3713A00713B83 /* ConsoleIO.swift.swift */,
-				767872AB20F372A600713B83 /* Panagram.swift.swift */,
+				767872AB20F372A600713B83 /* PatchStrings.swift */,
 			);
 			path = makeLocalizedStringSwift;
 			sourceTree = "<group>";
@@ -128,7 +128,7 @@
 			files = (
 				767872AA20F3713A00713B83 /* ConsoleIO.swift.swift in Sources */,
 				767872A320F36DD700713B83 /* main.swift in Sources */,
-				767872AC20F372A600713B83 /* Panagram.swift.swift in Sources */,
+				767872AC20F372A600713B83 /* PatchStrings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

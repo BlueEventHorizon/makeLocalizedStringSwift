@@ -8,8 +8,8 @@
 
 import Foundation
 
-let panagram = Panagram()
+let patch = PatchStrings()
 
-panagram.staticMode()
-panagram.read()
+patch.staticMode()
+patch.patch()
 
