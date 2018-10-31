@@ -32,58 +32,58 @@ class PatchStrings
         
         let executableName = (CommandLine.arguments[0] as NSString).lastPathComponent
         print("usage:")
-        print("\(executableName) patchfile Localizable.strings > Localizable.strings.new")
+        print("\(executableName) Localizable.strings patchfile > Localizable.strings.new")
     }
     
     func patch()
     {
         if let _input1 = input1, let _input2 = input2
         {
-            var lines1: [String] = [String]()
-            var lines2: [String] = [String]()
+            var originals: [String] = [String]()
+            var updates: [String] = [String]()
             
             let path1: String = "./" + _input1
             if let text = try? String(contentsOfFile: path1, encoding: String.Encoding.utf8) {
-                lines1 = text.components(separatedBy: "\n")
+                originals = text.components(separatedBy: "\n") // 各行の配列にする
             }
             
             let path2: String = "./" + _input2
             if let text = try? String(contentsOfFile: path2, encoding: String.Encoding.utf8) {
-                lines2 = text.components(separatedBy: "\n")
+                updates = text.components(separatedBy: "\n") // 各行の配列にする
             }
             
-            for line1 in lines1
+            for original in originals
             {
-                let split = line1.components(separatedBy: "\"")
+                let split = original.components(separatedBy: "\"") // 行内を"で分割する
                 if split.count > 1
                 {
-                    var line22: String?
-                    let key1 = split[1]
-                    for line2 in lines2
+                    var foundWord: String?
+                    let key1 = split[1] // ２つ目がKey
+                    for updateWord in updates
                     {
-                        let split2 = line2.components(separatedBy: "\"")
+                        let split2 = updateWord.components(separatedBy: "\"") // 行内を"で分割する
                         if split2.count > 1
                         {
-                            let key2 = split2[1]
+                            let key2 = split2[1] // ２つ目がKey
                             if key1 == key2
                             {
-                                line22 = line2
+                                foundWord = updateWord // 行を入れ替える
                                 break
                             }
                         }
                     }
-                    if let _line22 = line22
+                    if let _foundWord = foundWord
                     {
-                        print(_line22)
+                        print(_foundWord)
                     }
                     else
                     {
-                        print(line1)
+                        print(original)
                     }
                 }
                 else
                 {
-                    print(line1)
+                    print(original) //
                 }
             }
         }
